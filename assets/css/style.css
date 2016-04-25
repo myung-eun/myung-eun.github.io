@@ -1,3 +1,190 @@
-.text {
-	font-family:Lato;
+body, html {
+	margin: 0 auto;
+	height:100%;
+	width:100%;
+	padding:0;
+	-webkit-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-family: Source Sans Pro;
+	position:relative;
+	opacity:1;
+	transition: 2s opacity;
 }
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.parallax-window h1{
+	color:white;
+	margin: auto;
+	text-align:center;
+	padding-top:200px;
+	font-family:Karla;
+	font-size:35px;
+	letter-spacing:15px;
+	font-weight:200;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.parallax-window h3{
+	color:white;
+	margin: auto;
+	text-align:center;
+	padding-top:0px;
+	font-family:Karla;
+	font-style:italic;
+	font-size:12px;
+	letter-spacing:4px;
+	font-weight:600;
+	background:#000;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------------------------------------------------------------
+NAVBAR
+--------------------------------------------------------------------------------*/
+
+#navcontainer ul {
+	padding: 30px 0;
+	margin: -80px 0 0 0;
+	list-style-type: none;
+	background-color: #000;
+	font: Mako;
+	font-weight:500;
+	letter-spacing:2px;
+	border-bottom: 1px solid #000;
+	width: 100%;
+	height:auto;
+	text-align: center;
+	opacity:0.7;
+}
+
+.sticky {
+	position:fixed;
+	top:80px;
+	width:100%;
+}
+/* .navcontainer-sticky{
+	padding: 30px 0;
+	margin: 0px 0 0 0;
+	list-style-type: none;
+	background-color: #ccc;
+	font: Mako;
+	font-weight:500;
+	letter-spacing:2px;
+	border-bottom: 1px solid #c8c8c8;
+	width: 100%;
+	height:auto;
+	text-align: center;
+	opacity:0.7;
+} */
+
+li {
+	display: inline-block;
+}
+
+
+li a {
+	height:auto;
+	width:auto;
+	padding:0.2em 1em;
+	text-decoration: none;
+	font-weight:500;
+	background-color: #000;
+	color: #fff;
+	/* padding: 1em 3em;*/
+	transition:0.3s;
+	border:1px solid transparent;
+}
+
+li a:hover {
+	background-color: #000;
+	color: #fff;
+	transition:0.3s;
+	border:1px dotted white;
+	-webkit-border-radius: 0;
+	-moz-border-radius:0
+	border-radius:0;
+	opacity:0.6;
+
+}
+
+
+
+
+/* ------------------------------------------------------------------------------
+POSTS
+--------------------------------------------------------------------------------*/
+.post {
+	min-height:auto;
+	background-image: url("../../assets/img/subtle_dots.png");
+	background-repeat: repeat;
+	background-attachment: fixed;
+	padding:70px 0;
+}
+
+.post-container{
+	width:60%;
+	margin:0px auto;
+	background:transparent;
+	padding:30px;
+}
+
+.post-container h1{
+	color:#333;
+	margin:30px auto;
+	letter-spacing:2px;
+}
+
+.post-container p{
+	margin:0;
+	padding:0 20px 0 20px;
+	text-align:justify;
+	font-size:13px;
+	color:#404040;
+	line-height:20px;
+	font-family:Karla;
+}
+
+.post-container p.quot {
+	margin:0;
+	padding:0 20px 0 20px;
+	text-align:justify;
+	font-size:13px;
+	color:#b3b3b3;
+	font-family:Karla;
+	font-style:italic;
+}
+
+.post-container-inactive h1{
+	color:#333;
+	margin:20px auto; /* i think this is the value you need to change */
+	letter-spacing:2px;
+}
+
+.post-container-inactive p{
+	margin:0;
+	padding:0 20px 0 20px;
+	text-align:justify;
+	font-size:13px;
+	color:#404040;
+	font-family:Karla;
+}
+
+
+
+
+
