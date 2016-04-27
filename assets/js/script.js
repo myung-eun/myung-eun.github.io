@@ -1,11 +1,20 @@
 $(document).ready(function() {
 
-  // Making Navigation Bar Stick
+
+//CONSOLE LOG
+// $(document).scroll(function() {
+//    console.log($(window).scrollTop());
+// });
+
+
 
 $(function() {
-    $('body').removeClass('fade-out');
+   $('body').removeClass('fade-out');
 });
 
+
+// MAKING THE NAV BAR STICK TO THE TOP AS YOU SCROLL DOWN
+// (and then un-stick when you scroll back up)
 $(window).scroll(function () {
     if ($(window).scrollTop() >= 320) {
       $('#navcontainer').addClass('sticky');
@@ -17,80 +26,64 @@ $(window).scroll(function () {
 
 
 
+//if the bottom of the window is past .4 of the post div
+//remove class post-container-inactive from post-container h1
+// at speed MEDIUM
 
-  $('#sidebar-button').click(function(){
-    
-    if ($('.sidebar-container').hasClass('sidebar-active')) {
+//if the bottom of the windo is past .4 of the post div
+// remove class post-container-inactive from post-container p
+// at speed SLIGHTLY SLOWER
 
-      $('body').removeClass('no-scroll');
-      $('#sidebar-button').removeClass('button-active');
-      $('.sidebar-container').removeClass('sidebar-active');
-      $('.page-wrapper').removeClass('wrapper-active');
+//If you press any of the buttons, make window scroll to the top of
+//the respective post with a Boolean animation speed
 
-      
+
+$(window).scroll(function(){
+    if ($(this).scrollTop() >= 120) {
+        $('.parallax-window.home h1').fadeOut();
     } else {
-      setTimeout(function() {
-      $('body').addClass('no-scroll');
-      }, 300);
-      $('#sidebar-button').addClass('button-active');
-      $('.sidebar-container').addClass('sidebar-active');
-      $('.page-wrapper').addClass('wrapper-active');
+        $('.parallax-window.home h1').fadeIn();
     }
-    
-  });
+});
 
-
-
-  //Implement the showing and hiding of the sidebar when the user clicks on #sidebar-button here:
-
-
-  // QUESTION 7
-
-  //Implement the hiding of the sidebar when the user clicks on the page wrapper here:
-
-    $('.page-wrapper').click(function(){
-    
-    if ($('.sidebar-container').hasClass('sidebar-active')) {
-
-      $('body').removeClass('no-scroll');
-      $('.sidebar-container').removeClass('sidebar-active');
-      $('#sidebar-button').removeClass('button-active');
-      $('.page-wrapper').removeClass('wrapper-active');
-
-      
-    }
-    
-  });
-
-  // QUESTION 8
-
-  //Implement the "slide to left" when the user clicks on #carousel-next here
-
-$("#carousel-next").click(function() {
-    var x = parseInt($('#carousel').css('margin-left').replace("px", ""));
-    if (x == -3840) {
-      return false;
+$(window).scroll(function(){
+    if ($(this).scrollTop() >= 450) {
+        $('.parallax-window.about h1').fadeIn();
     } else {
-      var y = x - 960;
-      $("#carousel").css('margin-left', y);
+        $('.parallax-window.about h1').fadeOut();
     }
-  })
+});
 
-  //Implement the "slide to right" when the user clicks on #carousel-prev here
-
-  $("#carousel-prev").click(function() {
-    var x = parseInt($('#carousel').css('margin-left').replace("px", ""));
-    if (x == 0) {
-      return false;
+$(window).scroll(function(){
+    if ($(this).scrollTop() >= 1310) {
+        $('.parallax-window.work h1').fadeIn();
     } else {
-      var y = x + 960;
-      $("#carousel").css('margin-left', y);
+        $('.parallax-window.work h1').fadeOut();
     }
-  })
+});
 
-  //THIS IS NOT A REQUIRED QUESTION 
-  // EXTRA FOR EXPERTS 
 
-  // Implement a "smooth scroll" when the user clicks on the sidebar links here
+// BUTTONS
+
+$(".menu-item.home").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".parallax-window.home").offset().top
+  }, 500);
+});
+
+$(".menu-item.about").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".parallax-window.about").offset().top
+  }, 500);
+});
+
+$(".menu-item.work").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".parallax-window.work").offset().top
+  }, 500);
+});
+
+
+
 
 });
